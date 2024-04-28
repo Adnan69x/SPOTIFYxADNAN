@@ -1,8 +1,8 @@
-from mbot import Mbot , arq
+from SpotifyXAdnan import SpotifyXAdnan , arq
 from pyrogram import filters 
 from requests import get
 from io import BytesIO
-from mbot import aiohttpsession as session
+from SpotifyXAdnan import aiohttpsession as session
 
 async def download_song(url):
     async with session.get(url) as resp:
@@ -11,7 +11,7 @@ async def download_song(url):
     song.name = "a.mp3"
     return song
 is_downloading = False
-@Mbot.on_message(filters.command("saavn") & ~filters.edited)
+@SpotifyXAdnan.on_message(filters.command("saavn") & ~filters.edited)
 async def jssong(_, message):
     global is_downloading
     if len(message.command) < 2:
