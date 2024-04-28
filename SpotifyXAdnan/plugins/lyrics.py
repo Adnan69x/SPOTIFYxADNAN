@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
-from mbot import Mbot
+from SpotifyXAdnan import SpotifyXAdnan
 import requests 
 
 import os
@@ -8,7 +8,7 @@ import os
 
 API = "https://apis.xditya.me/lyrics?song="
 
-@Mbot.on_message(filters.text & filters.command(["lyrics"]))
+@SpotifyXAdnan.on_message(filters.text & filters.command(["lyrics"]))
 async def sng(bot, message):
         if not message.reply_to_message:
           await message.reply_text("Please reply to a message **Note** use %20 as space between words")
